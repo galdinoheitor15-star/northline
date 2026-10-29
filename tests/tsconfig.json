@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "noEmit": true
+  },
+  "include": ["./**/*.ts", "../src/domain/**/*.ts", "../src/data/mapping.ts", "../src/data/collections.ts", "../supabase/functions/_shared/sync-logic.ts"],
+  "exclude": []
+}

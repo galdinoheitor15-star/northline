@@ -1,0 +1,71 @@
+{
+  "expo": {
+    "name": "Northline",
+    "slug": "northline",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "northline",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.northline.mobile",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "O Northline usa o microfone para entender seus comandos de voz."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#09090A",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "app.northline.mobile",
+      "permissions": [
+        "RECORD_AUDIO",
+        "POST_NOTIFICATIONS"
+      ]
+    },
+    "web": {
+      "output": "single",
+      "favicon": "./assets/images/favicon.png",
+      "name": "Northline",
+      "shortName": "Northline",
+      "themeColor": "#09090A",
+      "backgroundColor": "#09090A",
+      "lang": "pt-BR"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#09090A",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 96
+        }
+      ],
+      "expo-secure-store",
+      "expo-localization",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "O Northline usa o microfone para entender seus comandos de voz."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#C9CBD1"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "backgroundColor": "#09090A"
+  }
+}

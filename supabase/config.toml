@@ -1,0 +1,40 @@
+# Configuração do Supabase CLI (desenvolvimento local e deploy das Edge Functions).
+project_id = "northline"
+
+[api]
+port = 54321
+schemas = ["public"]
+
+[db]
+port = 54322
+major_version = 17
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[auth]
+site_url = "http://localhost:8081"
+additional_redirect_urls = ["northline://", "northline://reset-password", "northline://sign-in", "exp://", "http://localhost:8081/reset-password"]
+enable_signup = true
+minimum_password_length = 8
+
+[auth.email]
+enable_confirmations = true
+
+# O assistente, a transcrição, a sincronização e a exclusão validam o JWT do usuário.
+[functions.assistant]
+verify_jwt = true
+
+[functions.transcribe]
+verify_jwt = true
+
+[functions.google-sync]
+verify_jwt = true
+
+[functions.delete-account]
+verify_jwt = true
+
+# O callback do Google chega sem JWT; o POST desta função valida o JWT manualmente.
+[functions.google-oauth]
+verify_jwt = false
